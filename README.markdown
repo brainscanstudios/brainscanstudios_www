@@ -1,15 +1,13 @@
 # Brain Scan Studios Website
 Website for http://www.brainscanstudios.com
 
-## To run locally with npm
-(If not installed)
+## To run locally
 
+Run the following in the root directory:
 ```
-npm install --global http-server
+python3 -m http.server 8080
 ```
-Run the following in the root directory
-```
-http-server
-```
+
+Then open http://localhost:8080 in your browser.
 
 

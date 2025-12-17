@@ -30,3 +30,5 @@ images/.svn/text-base/logo.jpg.svn-base
 node_modules/
 package-lock.json
 package.json
+
+CLAUDE.md
