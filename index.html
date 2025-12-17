@@ -1,154 +1,974 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-   "http://www.w3.org/TR/html4/loose.dtd">
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Brain Scan Studios - Home</title>
-	<meta name="author" content="Brian Kirsten">
-	
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Scan Studios - Where Creativity Meets Opportunity</title>
+    <meta name="description" content="Brain Scan Studios is a digital media company with over 25 years of experience in publishing, private investments, and collectibles.">
+    <meta name="author" content="Brain Scan Studios">
 
-	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-	
-	<style type="text/css">
-		/* Bootstrap 5 removed .jumbotron, adding back for compatibility */
-		.jumbotron {
-			padding: 2rem 1rem;
-			margin-bottom: 2rem;
-			background-color: #e9ecef;
-			border-radius: 0.3rem;
-		}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
-		.jumbotron .lead {
-			font-size: 20px;
-			line-height: 27px;
-			margin-top:15px;
-		}
-		.jumbotron p {
-			font-weight: 300;
-		}
-		.jumbotron h1, .jumbotron p {
-			margin-bottom: 9px;
-			color: white;
-			text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
-		}
-	
-		.masthead {
-			background-color: #3D2C25;
-		}
-		
-		/*section {
-		padding-top: 25px;
-		}*/
-		
-		.thetitle{
-			color: #AAA;
-		}
-	
-	</style>
-	
-	<script type="text/javascript">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-tertiary: #1a1a24;
+            --text-primary: #f5f5f7;
+            --text-secondary: #a1a1aa;
+            --text-muted: #71717a;
+            --accent: #c9a227;
+            --accent-hover: #d4b23a;
+            --border: #27272a;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-serif: 'Playfair Display', Georgia, serif;
+        }
 
-		$(document).ready(function (){
-			var theDate = new Date();
-			
-			$('#currentYear').append(theDate.getFullYear());
-						
-		});
-	
-	</script>
-	
-	<meta name="verify-v1" content="eXJ1f5f0fMOZA3N0nrQ0Xa1f2BHEmeiIOJwLr04WkSk=" >
-	
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 15, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .nav-logo img {
+            height: 40px;
+            width: auto;
+            border-radius: 4px;
+        }
+
+        .nav-logo span {
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-social a {
+            color: var(--text-muted);
+            transition: color 0.2s ease;
+        }
+
+        .nav-social a:hover {
+            color: var(--accent);
+        }
+
+        .nav-social svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Mobile menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center top, rgba(201, 162, 39, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: var(--accent);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0.5rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        #about {
+            background: var(--bg-secondary);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-family: var(--font-serif);
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-highlights {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .highlight-card {
+            background: var(--bg-tertiary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .highlight-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .highlight-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Team Section */
+        #team {
+            background: var(--bg-primary);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .team-card {
+            background: var(--bg-secondary);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .team-avatar {
+            width: 100px;
+            height: 100px;
+            background: var(--bg-tertiary);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        .team-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-card .role {
+            color: var(--accent);
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .team-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .team-card .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s ease;
+        }
+
+        .team-card .social-link:hover {
+            color: var(--accent);
+        }
+
+        /* Services Grid (Investments, Trading Cards) */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--bg-secondary);
+            padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: border-color 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--bg-tertiary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .service-icon svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .service-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Ventures Section */
+        #ventures {
+            background: var(--bg-secondary);
+        }
+
+        /* Publishing Section */
+        #publishing {
+            background: var(--bg-primary);
+        }
+
+        .publishing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .comic-card {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .comic-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .comic-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            background: var(--bg-tertiary);
+        }
+
+        .comic-content {
+            padding: 1.5rem;
+        }
+
+        .comic-card h3 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .comic-card .creator {
+            font-size: 0.8rem;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+
+        .comic-card .creator a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .comic-card .creator a:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        .comic-card p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .comic-links {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .comic-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.4rem 0.75rem;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .comic-links a:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .comic-links svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* Legacy Section */
+        #legacy {
+            background: var(--bg-secondary);
+        }
+
+        .legacy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .legacy-content p {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+
+        .legacy-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-tertiary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .legacy-badge span {
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border);
+            padding: 4rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .footer-brand img {
+            height: 40px;
+            border-radius: 4px;
+        }
+
+        .footer-brand span {
+            font-weight: 600;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-social a {
+            color: var(--text-muted);
+            transition: color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-social a:hover {
+            color: var(--accent);
+        }
+
+        .footer-social svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .footer-copyright {
+            width: 100%;
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .publishing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .nav-container {
+                padding: 1rem 1.5rem;
+            }
+
+            .publishing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-	
-	<div class="topbar">
-	      <div class="topbar-inner">
-	        <div class="container">
-		
-				<div class="row">
-					
-					<div class="col-md-6">
-					
-	          				<ul class="nav navbar-nav">
-					            <li class=""><a href="index.html#about">About</a></li>
-					            <li class=""><a href="products.html">Products</a></li>
-					            <li class=""><a href="http://www.flickr.com/photos/brainscanstudios/">Flickr</a></li>
-					          </ul>
-					
-					</div>
-			
-				</div>
-	
-	        </div>
-	      </div>
-	    </div>
-	
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="http://www.brainscanstudios.com/images/logo.jpg" alt="Brain Scan Studios">
+                <span>Brain Scan Studios</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#ventures">Ventures</a></li>
+                <li><a href="#publishing">Publishing</a></li>
+            </ul>
+            <div class="nav-social">
+                <a href="https://www.linkedin.com/company/brain-scan-studios-inc./" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://x.com/brainscanstudio" target="_blank" rel="noopener" aria-label="Twitter/X">
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100054454601815" target="_blank" rel="noopener" aria-label="Facebook">
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+            </button>
+        </div>
+    </nav>
 
-	<header class="jumbotron masthead" id="overview">
-	      <div class="inner">
-	        <div class="container">
-				<div class="row">
-				  <div class="col-md-2">
-				    <a href="index.html"><img src="http://www.brainscanstudios.com/images/logo.jpg" alt="Brain Scan Logo" border="0"/></a>
-				  </div>
-				  <div class="col-md-8">
-				    <p class="lead">
-	            		Brain Scan Studios is a digital media company <br> building awesome websites and publishing amazing comics.<br>
-	          		</p>
-				  </div>
-				</div>
-	        </div><!-- /container -->
-	      </div>
-	    </header>
-	
-		<div class="container">
-			<section id="about">
-			  <div class="row">
-			    <div class="col-md-10">
-			      <h3>History</h3>
-			      <p>Brain Scan Studios was originally founded in 1999 in sunny Orlando, FL and is owned by Brian &amp; Christine Kirsten.
-				  <br><br>Our <a href="products.html">products</a> include <a href="http://www.fictfact.com">FictFact</a>, a website for keeping track of your book series and publishing comic books and graphic novels.</p>
-			    </div>
-			    <div class="col-md-10">
-			      <h3>The Team</h3>
-			      <dl>
-				        <dt>Brian Kirsten <small class="thetitle">CEO of Brain Scan Studios / CTO of FictFact</small></dt>
-				        <dd style="margin-bottom:10px;">Brian is an entrepreneur, software engineer with over 25 years of experience, writer and publisher. &nbsp;<a href="http://www.linkedin.com/in/briankirsten" style="text-decoration:none;"><img src="http://www.linkedin.com/img/webpromo/btn_in_20x15.png" width="20" height="15" alt="View Brian  Kirsten's LinkedIn profile" style="vertical-align:middle" border="0"></a></dd>
-				        <dt>Christine Kirsten <small class="thetitle">Co-founder Brain Scan Studios / CEO of FictFact</small></dt>
-				        <dd style="margin-bottom:10px;">Christine has a passion for reading that borderlines in obsession, plain and simple. &nbsp;<a href="http://www.linkedin.com/in/christinekirsten" style="text-decoration:none;"><img src="http://www.linkedin.com/img/webpromo/btn_in_20x15.png" width="20" height="15" alt="View Brian  Kirsten's LinkedIn profile" style="vertical-align:middle" border="0"></a></dd>
-				        <dt>Richard Ehring  <small class="thetitle">Community Manager of FictFact</small></dt>
-				        <dd style="margin-bottom:10px;">With over 25 years of QA &amp; Engineering experience, if you've got an issue Richard is the man to solve it. &nbsp;<a href="http://www.linkedin.com/in/richardehring" style="text-decoration:none;"><img src="http://www.linkedin.com/img/webpromo/btn_in_20x15.png" width="20" height="15" alt="View Brian  Kirsten's LinkedIn profile" style="vertical-align:middle" border="0"></a></dd>
-				   </dl>
-			    </div>
-			  </div><!-- /row -->
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="http://www.brainscanstudios.com/images/logo.jpg" alt="Brain Scan Studios" class="hero-logo">
+            <h1>Where <span>Creativity</span> Meets <span>Opportunity</span></h1>
+            <p>A digital media company building stories, making investments, and curating collectibles since 1999.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">25+</span>
+                    <span class="stat-label">Years in Business</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">Orlando</span>
+                    <span class="stat-label">Florida, USA</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">1999</span>
+                    <span class="stat-label">Founded</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-			</section>			
-		</div>
-	
-		<footer class="footer">
-		      <div class="container">
-		        <p>
-		          All site content is &#169; <span id="currentYear"></span> Brain Scan Studios and creators except where noted. All Rights Reserved.
-		        </p>
-		      </div>
-		    </footer>
-		
-			<script type="text/javascript">
-			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-			</script>
-			<script type="text/javascript">
-			var pageTracker = _gat._getTracker("UA-146325-5");
-			pageTracker._initData();
-			pageTracker._trackPageview();
-			</script>
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Story</span>
+                <h2 class="section-title">A Legacy of Creative Innovation</h2>
+                <p class="section-subtitle">From comic books to investments, we've always followed our passion for building remarkable things.</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Building Dreams Since 1999</h3>
+                    <p>Brain Scan Studios was founded in sunny Orlando, Florida by Brian and Christine Kirsten. What started as a passion for storytelling and publishing has evolved into a diverse enterprise spanning multiple industries.</p>
+                    <p>Over more than two decades, we've published award-winning comics, built technology platforms, and expanded into private investments and collectibles. Our journey reflects a simple philosophy: pursue excellence in everything we do.</p>
+                    <p>Today, Brain Scan Studios continues to explore new opportunities while honoring our creative roots. Whether we're evaluating an investment, sourcing rare trading cards, or revisiting our publishing catalog, we bring the same dedication and entrepreneurial spirit that defined our earliest days.</p>
+                </div>
+                <div class="about-highlights">
+                    <div class="highlight-card">
+                        <h4>
+                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                            Publishing Heritage
+                        </h4>
+                        <p>Published critically acclaimed comics and graphic novels distributed worldwide.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>
+                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                            Private Investments
+                        </h4>
+                        <p>Strategic investments in promising ventures and opportunities.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>
+                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                            Collectibles
+                        </h4>
+                        <p>Curating and trading sports cards and premium collectibles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-			<!-- Bootstrap 5 Bundle (includes Popper) -->
-			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!-- Team Section -->
+    <section id="team">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Leadership</span>
+                <h2 class="section-title">Meet the Team</h2>
+                <p class="section-subtitle">The entrepreneurs behind Brain Scan Studios.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">BK</div>
+                    <h3>Brian Kirsten</h3>
+                    <div class="role">CEO & Founder</div>
+                    <p>Entrepreneur, software engineer with over 25 years of experience, writer, and publisher. Brian leads Brain Scan Studios' strategic vision and operations.</p>
+                    <a href="https://www.linkedin.com/in/briankirsten" target="_blank" rel="noopener" class="social-link">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        LinkedIn Profile
+                    </a>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">CK</div>
+                    <h3>Christine Kirsten</h3>
+                    <div class="role">COO & Co-founder</div>
+                    <p>With a passion for reading that borders on obsession, Christine brings a unique perspective to content curation and business development at Brain Scan Studios.</p>
+                    <a href="https://www.linkedin.com/in/christinekirsten" target="_blank" rel="noopener" class="social-link">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        LinkedIn Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Ventures Section -->
+    <section id="ventures">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What We Do</span>
+                <h2 class="section-title">Our Ventures</h2>
+                <p class="section-subtitle">Diversified interests spanning investments and collectibles.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/></svg>
+                    </div>
+                    <h3>Private Investments</h3>
+                    <p>Brain Scan Studios makes strategic private investments in promising ventures and opportunities. With over 25 years of entrepreneurial experience, we bring both capital and operational expertise to our investment partners. We focus on opportunities where our unique background in technology, media, and business development can add meaningful value beyond financial support.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z"/></svg>
+                    </div>
+                    <h3>Trading Cards & Collectibles</h3>
+                    <p>We buy, sell, and trade sports cards and premium collectibles. Our focus includes vintage and modern sports cards, trading card games, and other collectible items. Whether you're a serious collector or just getting started, we're always interested in discussing opportunities to buy collections or connect collectors with the cards they're looking for.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publishing Section -->
+    <section id="publishing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Creative Works</span>
+                <h2 class="section-title">Published Comics</h2>
+                <p class="section-subtitle">A selection of comics and graphic novels from our publishing catalog.</p>
+            </div>
+            <div class="publishing-grid">
+                <div class="comic-card">
+                    <img src="http://farm4.static.flickr.com/3175/2546355849_73af9c47ff.jpg" alt="Touch of Death" class="comic-image">
+                    <div class="comic-content">
+                        <h3>Touch of Death</h3>
+                        <div class="creator">By Brian Kirsten & Ray Dillon</div>
+                        <p>A 3-issue mini-series following Michael's desperate search for his kidnapped bride, uncovering an ancient Hawaiian secret with deadly consequences.</p>
+                        <div class="comic-links">
+                            <a href="https://www.amazon.com/Touch-of-Death-1-ebook/dp/B0027P8AYY/" target="_blank" rel="noopener">
+                                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M.045 18.02c.072-.116.187-.124.348-.022 3.636 2.11 7.594 3.166 11.87 3.166 2.852 0 5.668-.533 8.447-1.595l.315-.14c.138-.06.234-.1.293-.13.226-.088.39-.046.525.13.12.174.09.336-.12.48-.256.19-.6.41-1.006.654-1.244.743-2.64 1.316-4.185 1.726a17.617 17.617 0 01-10.951-.577 17.88 17.88 0 01-5.43-3.395c-.144-.13-.165-.27-.106-.297zm6.032-6.922l-.13.353c-.18.51-.2.94-.06 1.317.137.376.4.7.786.97.396.278.91.464 1.554.56.658.09 1.463.058 2.416-.104l.36-.067c-.06-.25-.1-.44-.14-.58-.04-.13-.06-.26-.06-.39 0-.23.06-.46.18-.67l-.25.04c-.68.12-1.24.1-1.69-.06-.45-.16-.76-.43-.94-.81-.17-.38-.21-.82-.12-1.32l.04-.2-.94-.08-.97-.07zm10.423 1.57c-.134-.09-.267-.09-.4-.006l-.135.09c-.083.066-.1.15-.05.25.052.09.14.2.262.302.124.1.296.18.516.26.22.083.48.116.784.116.543 0 1.065-.146 1.56-.436.497-.29.9-.675 1.205-1.156.306-.48.46-1.002.46-1.56 0-.463-.1-.86-.297-1.19-.2-.33-.48-.59-.843-.78s-.787-.285-1.27-.285c-.55 0-1.063.108-1.536.324-.473.215-.86.5-1.16.855-.3.355-.46.74-.48 1.156h1.62c.054-.267.2-.483.447-.65.246-.166.53-.25.85-.25.296 0 .533.066.71.2.177.13.265.32.265.57 0 .267-.103.5-.31.7-.208.2-.487.37-.84.52-.35.15-.755.26-1.21.33zm-9.854-2.59l-.08-.294c-.14-.56-.15-1.02-.03-1.39.12-.372.35-.67.69-.89.338-.226.78-.38 1.32-.47.54-.09 1.16-.08 1.87.02l.35.06c.02-.15.03-.28.04-.4 0-.2-.04-.39-.13-.55l.24-.04c.65-.12 1.18-.1 1.6.05.42.15.72.4.9.75.18.35.23.78.15 1.27l-.03.18.9.07.9.07.08-.36c.1-.51.11-.96.03-1.35-.08-.39-.27-.73-.55-1.02-.29-.29-.68-.51-1.17-.67-.5-.16-1.11-.24-1.83-.24-.6 0-1.15.06-1.65.18-.5.12-.94.3-1.32.53-.38.24-.68.52-.9.86-.23.34-.37.72-.43 1.14l-.02.2c-.65-.1-1.21-.11-1.68-.04-.47.08-.85.23-1.15.45-.3.22-.52.5-.66.85-.14.34-.19.74-.15 1.17l.02.2.92.07.88.07z"/></svg>
+                                Amazon
+                            </a>
+                            <a href="https://www.lulu.com/search?contributor=Brian+Kirsten" target="_blank" rel="noopener">
+                                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                                Lulu
+                            </a>
+                            <a href="https://www.drivethrucomics.com/en/publisher/2576/brain-scan-studio" target="_blank" rel="noopener">
+                                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                                DriveThru
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="comic-card">
+                    <img src="http://farm4.static.flickr.com/3215/3126252042_c78f416075.jpg" alt="Watchmensch" class="comic-image">
+                    <div class="comic-content">
+                        <h3>Watchmensch</h3>
+                        <div class="creator">By <a href="https://bleedingcool.com/author/rich-johnston/" target="_blank" rel="noopener">Rich Johnston</a> & Simon Rohrmuller</div>
+                        <p>A satirical one-shot parody featuring an all-star lineup of artists, poking fun at comics, the industry, and the movies they spawn.</p>
+                    </div>
+                </div>
+                <div class="comic-card">
+                    <img src="http://farm4.static.flickr.com/3148/2838527484_f70305ff35.jpg" alt="Revolution of the Mask" class="comic-image">
+                    <div class="comic-content">
+                        <h3>Revolution of the Mask</h3>
+                        <div class="creator">By Lewis Lovhaug & Leonardo Freites</div>
+                        <p>A 12-issue maxi-series set on a dystopian Earth where individuality is forbidden and superheroes spark a revolution.</p>
+                    </div>
+                </div>
+                <div class="comic-card">
+                    <img src="http://farm3.static.flickr.com/2257/2546275683_ccfc1d2a66.jpg" alt="Civil Wardrobe" class="comic-image">
+                    <div class="comic-content">
+                        <h3>Civil Wardrobe</h3>
+                        <div class="creator">By <a href="https://bleedingcool.com/author/rich-johnston/" target="_blank" rel="noopener">Rich Johnston</a> & friends</div>
+                        <p>A satirical one-shot featuring an all-star lineup of artists including Kaare Andrews, Ashley Wood, and Darick Robertson, parodying comics and the industry.</p>
+                    </div>
+                </div>
+                <div class="comic-card">
+                    <img src="http://farm4.static.flickr.com/3175/2546292863_fa33cce510.jpg" alt="Fiendish Fables" class="comic-image">
+                    <div class="comic-content">
+                        <h3>Fiendish Fables</h3>
+                        <div class="creator">By John Schlim Jr. & friends</div>
+                        <p>A collection of creepy short stories inspired by classic horror comics, featuring zombie kids, a vampire horse, and the debut of "Goth Ghost Girl". Cover by David Wachter.</p>
+                    </div>
+                </div>
+                <div class="comic-card">
+                    <img src="http://farm4.static.flickr.com/3155/2547128048_8346c9df71.jpg" alt="One Last Song" class="comic-image">
+                    <div class="comic-content">
+                        <h3>One Last Song</h3>
+                        <div class="creator">By CJ Hurtt & Shawn Richter</div>
+                        <p>A 6-issue mini-series set in 2046 where media personalities need government-sanctioned "performance cards" or face internment. Musician Amanda Casey rebels through her songs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legacy Section -->
+    <section id="legacy">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our History</span>
+                <h2 class="section-title">Digital Legacy</h2>
+            </div>
+            <div class="legacy-content">
+                <p>From 2009 to 2023, Brain Scan Studios operated <strong>FictFact</strong>, a beloved web platform that helped readers track their book series and discover new reads. FictFact built a dedicated community of book lovers who used the service to never miss another release in their favorite series. While FictFact is no longer active, its spirit of helping people connect with great stories lives on in everything we do.</p>
+                <div class="legacy-badge">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                    <span>FictFact</span> — Helping readers track series (2009-2019)
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="http://www.brainscanstudios.com/images/logo.jpg" alt="Brain Scan Studios">
+                <span>Brain Scan Studios</span>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/company/brain-scan-studios-inc./" target="_blank" rel="noopener">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    LinkedIn
+                </a>
+                <a href="https://x.com/brainscanstudio" target="_blank" rel="noopener">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    Twitter/X
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100054454601815" target="_blank" rel="noopener">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    Facebook
+                </a>
+            </div>
+            <div class="footer-copyright">
+                &copy; <span id="currentYear"></span> Brain Scan Studios. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Simple smooth scroll for Safari
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
